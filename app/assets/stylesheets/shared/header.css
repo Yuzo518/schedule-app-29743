@@ -1,0 +1,17 @@
+.top-page-header{
+  height: 80px;
+  width: 100vw;
+  color: aliceblue;
+  background-color: #28a745;
+  display: flex;
+  justify-content: space-between;
+}
+.right-list{
+  padding: 20px;
+  /*background-color: brown;*/
+  /*text-align: center;*/
+}
+.left-list{
+  padding: 60px 20px 0 20px;
+  /*background-color: brown;*/
+}
