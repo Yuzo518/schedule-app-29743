@@ -14,10 +14,9 @@
           </div>
         </div>
 
-        <%#= render "shared/error" %>
-
         <div class="sign-input">
           <%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
+          
             <div class="form-group">
               <div class="input-label">
                 <label for="InputEmail">メールアドレス</label>

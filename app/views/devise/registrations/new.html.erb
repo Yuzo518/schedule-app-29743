@@ -16,6 +16,9 @@
 
         <div class="sign-input">
           <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+
+            <%= render 'shared/error_messages', model: f.object %>
+
             <div class="form-group">
               <div class="input-label">
                 <label for="Name">名前</label>
