@@ -4,10 +4,10 @@
   opacity: 0.7;
 }
 .calendar{
-  height: calc(100% - 180px);
+  height: calc(100% - 120px);
 }
 .main-footer{
-  height: 120px;
+  height: 60px;
   background-color: gray;
   opacity: 0.7;
 }

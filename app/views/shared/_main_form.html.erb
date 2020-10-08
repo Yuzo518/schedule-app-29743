@@ -2,7 +2,9 @@
   メインヘッダー
 </div>
 <div class="calendar">
-  カレンダー
+  <%= month_calendar do |date| %>
+    <%= date.day %>      
+  <% end %>
 </div>
 <div class="main-footer">
   メインフッター
