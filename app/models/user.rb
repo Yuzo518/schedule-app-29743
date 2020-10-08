@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   # nameが必須
   validates :name, presence: true
+
+  # アソシエーション
+  has_many :plan_users
+  has_many :plans, through: :plan_users
 end

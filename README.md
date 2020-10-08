@@ -21,8 +21,8 @@
 | ------------- | ---------- | ------------ |
 | title         | string     | null: false  |
 | date_pattern  | string     | null: false  |
-| start_time    | string     | null: false  |
-| ending_time   | string     | null: false  |
+| start_time    | datetime   | null: false  |
+| ending_time   | datetime   | null: false  |
 | comment       | text       |              |
 | master_id     | integer    | null: false  |
 

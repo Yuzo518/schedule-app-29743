@@ -2,5 +2,74 @@
   予定の入力はこちらから
 </div>
 <div class="side-main">
-  入力フォーム
+  <%= render 'shared/error_messages', model: @plan %>
+  <%= form_with url: plans_path, local: true do |form| %>
+
+    <div class="title">
+      <div class="column-name">
+        タイトル
+      </div>
+      <div class="column-input">
+        <%= form.text_field :title, class:"input-title", maxlength:"20", size: 31, placeholder:"件名 ※20文字まで" %>
+      </div>
+    </div>
+
+    <div class="time">
+      <div class="data-pattern">
+        <%= form.radio_button :date_pattern, :"通常" %>
+        <%= form.label :date_pattern, "通常", { value: "通常", style: :"display: inline-block;"} %>
+        <%= form.radio_button :date_pattern, :"締切" %>
+        <%= form.label :date_pattern, "締切", { value: "締切", style: :"display: inline-block;"} %>
+        <%= form.radio_button :date_pattern, :"終日" %>
+        <%= form.label :date_pattern, "終日", { value: "終日", style: :"display: inline-block;"} %>
+      </div>
+      <div class="start-time">
+        <div class="column-name">
+          開始時間
+        </div>
+        <div class="column-input">
+          <%= form.datetime_select :start_time, class:"input-time" %>
+        </div>
+      </div>
+      <div class="ending-time">
+        <div class="column-name">
+          終了時間
+        </div>
+        <div class="column-input">
+          <%= form.datetime_select :ending_time, class:"input-time"  %>
+        </div>
+      </div>
+    </div>
+
+    <div class="user">
+      <% 5.times do |t| %>
+      <div class="column-user">
+        <div class="column-name">
+          <%= "参加者#{t+1}"%>
+        </div>
+        <div class="column-input">
+          <select name="user_ids[]">
+            <option value="">選択してください</option>
+            <% User.where.not(id: current_user.id).each do |user| %>
+              <option value=<%= user.id %>><%= user.name %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+      <% end %>
+      <input name="user_ids[]" type="hidden" value=<%= current_user.id%>>
+    </div>
+
+    <div class="comment">
+      <div>
+        コメント（注意事項など）
+      </div>
+      <%= form.text_area :comment, rows:"9", size: "46x9" , maxlength:"500",  class:"input-comment", placeholder:"（例）\n田中もしくは鈴木に直接提出をお願いします。\n遅れる場合は事前にご連絡をお願いいたします。\n※500文字まで" %>
+    </div>
+
+    <div class="submit">
+      <%= form.submit "登録", class:"form-btn"%>
+    </div>
+    
+  <% end %>
 </div>

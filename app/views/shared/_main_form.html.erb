@@ -1,11 +1,39 @@
+<%# 検索フォーム %>
 <div class="main-header">
   メインヘッダー
 </div>
-<div class="calendar">
-  <%= month_calendar do |date| %>
-    <%= date.day %>      
-  <% end %>
-</div>
+
+<%# カレンダー表示部分 ※予定がなければカレンダーのみ表示する %>
+<% if !@plans.present? %>
+  <div class="calendar">
+    <%= month_calendar do |date| %>
+      <%= date.day %>      
+    <% end %>
+  </div>
+<% else %>
+  <div class="calendar">
+    <%= month_calendar events: @plans do |date, plans| %>
+      <%= date.day %>
+      <% plans.each do |plan| %>
+        <div>
+          <%= link_to(plan_path(plan)) do %>
+            <% if plan.date_pattern == "通常" %>
+              <%= plan.start_time.strftime("%H:%M") %><span>-</span><%= plan.ending_time.strftime("%H:%M") %>
+              <%= plan.title%>
+            <% elsif plan.date_pattern == "締切" %>
+              <%= plan.ending_time.strftime("%H:%M") %><span>まで</span>
+              <%= plan.title %>
+            <% else %>
+              <%= plan.title %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
+<%# フッター部分 %>
 <div class="main-footer">
   メインフッター
 </div>

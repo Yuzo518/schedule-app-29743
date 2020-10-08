@@ -1,8 +1,65 @@
 .side-header{
-  height: 60px;
-  background-color: orangered;
+  height: 50px;
+  background-color: #007bff;
+  color: aliceblue;
+  font-size: 30px;
+  padding-top: 10px;
+  text-align:center;
 }
 .side-main{
   height: calc(100% - 60px);
-  background-color: orchid;
+  background-color: whitesmoke;
+  padding-left: 1vw;
+  font-size: 20px;
+}
+.column-name{
+  width: 5vw;
+  margin-right: 10px;
+}
+
+.title{
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+}
+.input-title{
+  font-size: 25px;
+}
+
+.time{
+  padding-top: 15px;
+}
+
+.start-time{
+  display: flex;
+  align-items: center;
+}
+
+.ending-time{
+  display: flex;
+  align-items: center;
+}
+
+.user{
+  padding-top: 15px;
+}
+.column-user{
+  display: flex;
+  align-items: center;
+}
+
+.comment{
+  padding-top: 15px;
+}
+
+.submit{
+  padding-top: 15px;
+  width: 94%;
+}
+.form-btn {
+  width: 100%;
+  color: aliceblue;
+  background-color: #007bff;
+  border: none;
+  padding: 5px;
 }
