@@ -1,0 +1,43 @@
+.simple-calendar {
+  padding: 20px;
+  .calendar-heading{
+    font-size: 30px;
+    text-align: center;
+  }
+  .table-striped{
+    background-color: whitesmoke;
+    opacity: 0.8;
+  }
+  thead{
+    background-color:gray;
+  }
+  .day {}
+
+  .wday-0 {
+    color: red;
+  }
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {
+    color: blue;
+  }
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {
+    color: gray;
+  }
+  .next-month { 
+    color: gray;
+  }
+  .current-month {}
+
+  .has-events {}
+}

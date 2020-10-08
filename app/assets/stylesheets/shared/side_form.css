@@ -1,0 +1,8 @@
+.side-header{
+  height: 60px;
+  background-color: orangered;
+}
+.side-main{
+  height: calc(100% - 60px);
+  background-color: orchid;
+}

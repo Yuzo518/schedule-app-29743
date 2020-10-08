@@ -1,3 +1,20 @@
 // Place all the styles related to the plans controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper{
+  height: calc(100vh - 80px);
+  width: 100vw;
+  display: flex;
+  background-image: image-url("BackImage.jpg");
+  background-repeat: repeat;
+}
+
+.main-form{
+  width: 70%;
+}
+
+.side-form{
+  width: 30%;
+  background-color: whitesmoke;
+  opacity: 0.7;
+}
