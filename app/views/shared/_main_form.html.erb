@@ -1,11 +1,24 @@
+<%# 検索フォーム %>
 <div class="main-header">
   メインヘッダー
 </div>
-<div class="calendar">
-  <%= month_calendar do |date| %>
-    <%= date.day %>      
-  <% end %>
-</div>
+
+<%# カレンダー表示部分 ※予定がなければカレンダーのみ表示する %>
+<% if !@plans.present? %>
+  <div class="calendar">
+    <%= month_calendar do |date| %>
+      <%= date.day %>      
+    <% end %>
+  </div>
+<% else %>
+  <div class="calendar">
+    <%= month_calendar do |date| %>
+      <%= date.day %>      
+    <% end %>
+  </div>
+<% end %>
+
+<%# フッター部分 %>
 <div class="main-footer">
   メインフッター
 </div>
