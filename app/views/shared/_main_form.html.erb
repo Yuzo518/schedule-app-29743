@@ -12,8 +12,23 @@
   </div>
 <% else %>
   <div class="calendar">
-    <%= month_calendar do |date| %>
-      <%= date.day %>      
+    <%= month_calendar events: @plans do |date, plans| %>
+      <%= date.day %>
+      <% plans.each do |plan| %>
+        <div>
+          <%= link_to(plan_path(plan)) do %>
+            <% if plan.date_pattern == "通常" %>
+              <%= plan.start_time.strftime("%H:%M") %><span>-</span><%= plan.ending_time.strftime("%H:%M") %>
+              <%= plan.title%>
+            <% elsif plan.date_pattern == "締切" %>
+              <%= plan.ending_time.strftime("%H:%M") %><span>まで</span>
+              <%= plan.title %>
+            <% else %>
+              <%= plan.title %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 <% end %>
