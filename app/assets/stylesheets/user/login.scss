@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-image: url("../BackImage.jpg");
+  background-image: image-url("BackImage.jpg");
   background-repeat: repeat;
 }
 
@@ -22,7 +22,12 @@
 }
 
 .app-title{
+  margin: 20px 0;
   text-align: center;
+}
+.app-title h1{
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .form-group{
