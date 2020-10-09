@@ -1,0 +1,17 @@
+.edit-header{
+  height: 50px;
+  background-color: #17a2b8;
+  color: aliceblue;
+  font-size: 30px;
+  padding-top: 10px;
+  text-align:center;
+}
+
+.edit-btn {
+  width: 100%;
+  font-size: 30px;
+  color: aliceblue;
+  background-color: #17a2b8;
+  border: none;
+  padding: 5px;
+}

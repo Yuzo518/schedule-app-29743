@@ -86,7 +86,7 @@
       <% if current_user.id == @plan.master_id %>
       <div class="show-btn">
         
-        <%= link_to("#") do %>
+        <%= link_to(edit_plan_path(@plan)) do %>
           <div class="btn-edit" >
             変更
           </div>
