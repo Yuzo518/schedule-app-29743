@@ -83,6 +83,7 @@
       </div>
 
       <%# 作成者以外は表示させない%>
+      <% if current_user.id == @plan.master_id %>
       <div class="show-btn">
         
         <%= link_to("#") do %>
@@ -95,15 +96,8 @@
             削除
           </div>
         <% end %>
-        <!--
-        <div class="btn-edit">
-          <%= link_to "変更", "#" %>
-        </div>
-        <div class="btn-destroy">
-          <%= link_to "削除", "#" %>
-        </div>
-        -->
       </div>
+      <% end %>
       <%# /作成者以外は表示させない%>
 
     </div>
