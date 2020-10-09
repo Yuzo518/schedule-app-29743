@@ -1,0 +1,113 @@
+<div class="header">
+  <%= render "shared/header" %>
+</div>
+
+<div class="wrapper">
+
+  <%#メインフォーム部分 %>
+  <div class="main-form">
+    <%= render "shared/main_form" %>
+  </div>
+  <%#メインフォーム部分 %>
+
+  <%#サイドフォーム部分%>
+  <div class="side-form">
+    <div class="show-header">
+      詳細ページ
+    </div>
+    <div class="show-main">
+
+      <div class="show-title">
+        <div class="column-show">
+          <%= @plan.title %>
+        </div>
+      </div>
+
+      <div class="show-master">
+        <div class="column-name">
+          作成者
+        </div>
+        <div>
+          <%= link_to "#{User.find(@plan.master_id).name}", "#" %>
+        </div>
+      </div>
+
+      <div class="show-time">
+        <div class="data-pattern">
+        </div>
+        <div class="start-time">
+          <div class="column-name">
+            開始時間
+          </div>
+          <div class="column-show">
+            <%= @plan.start_time %>
+          </div>
+        </div>
+        <div class="ending-time">
+          <div class="column-name">
+            終了時間
+          </div>
+          <div class="column-show">
+            <%= @plan.ending_time %>
+          </div>
+        </div>
+      </div>
+
+      <div class="show-user">
+        <span>参加者</span>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>名前</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @plan.users.each do |user| %>
+            <tr>
+              <td><%= link_to "#{user.name}", "#" %></td>
+              <td class="table-email"><%= user.email %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="show-comment">
+        <div>
+          コメント（注意事項など）
+        </div>
+        <div class="comment-area">
+          <%= @plan.comment %>
+        </div>
+      </div>
+
+      <%# 作成者以外は表示させない%>
+      <div class="show-btn">
+        
+        <%= link_to("#") do %>
+          <div class="btn-edit" >
+            変更
+          </div>
+        <% end %>
+        <%= link_to("#") do %>
+          <div class="btn-destroy" >
+            削除
+          </div>
+        <% end %>
+        <!--
+        <div class="btn-edit">
+          <%= link_to "変更", "#" %>
+        </div>
+        <div class="btn-destroy">
+          <%= link_to "削除", "#" %>
+        </div>
+        -->
+      </div>
+      <%# /作成者以外は表示させない%>
+
+    </div>
+  </div>
+  <%#サイドフォーム部分%>
+
+</div>
