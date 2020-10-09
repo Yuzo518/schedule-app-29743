@@ -53,11 +53,12 @@
 }
 
 .submit{
-  padding-top: 15px;
+  padding-top: 25px;
   width: 94%;
 }
 .form-btn {
   width: 100%;
+  font-size: 30px;
   color: aliceblue;
   background-color: #007bff;
   border: none;

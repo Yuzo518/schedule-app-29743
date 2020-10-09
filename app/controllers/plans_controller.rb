@@ -14,6 +14,11 @@ class PlansController < ApplicationController
     end
   end
 
+  def show
+    @plan = Plan.find(params[:id])
+    @plans = Plan.all
+  end
+
   private
 
   def plan_params
