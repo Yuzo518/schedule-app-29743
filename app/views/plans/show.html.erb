@@ -96,7 +96,7 @@
             変更する
           </div>
         <% end %>
-        <%= link_to("#") do %>
+        <%= link_to(plan_path(@plan), method: :delete) do %>
           <div class="btn-destroy" >
             削除する
           </div>

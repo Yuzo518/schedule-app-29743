@@ -1,8 +1,8 @@
 class PlansController < ApplicationController
   before_action :find_plans
   before_action :calc_users_count, only: [:edit, :update]
-  before_action :find_plan, only: [:show]
-  before_action :move_index_check, only: [:edit, :update]
+  before_action :find_plan, only: [:show, :destroy]
+  before_action :move_index_check, only: [:edit, :update, :destroy]
 
   def index
     @plan = Plan.new
@@ -28,6 +28,14 @@ class PlansController < ApplicationController
       redirect_to root_path
     else
       render 'edit'
+    end
+  end
+
+  def destroy
+    if @plan.destroy
+      redirect_to root_path
+    else
+      render 'show'
     end
   end
 
