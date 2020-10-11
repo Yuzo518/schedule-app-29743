@@ -1,7 +1,7 @@
 class Plan < ApplicationRecord
   # アソシエーション
   has_many :plan_users
-  has_many :users, through: :plan_users
+  has_many :users, through: :plan_users, dependent: :destroy
 
   # バリデーション
   validates :title, presence: true, length: { maximum: 20 }
