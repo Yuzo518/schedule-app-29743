@@ -1,6 +1,10 @@
 class PlansController < ApplicationController
+  before_action :find_plans
+  before_action :calc_users_count, only: [:edit, :update]
+  before_action :find_plan, only: [:show]
+  before_action :move_index_check, only:[:edit, :update]
+
   def index
-    @plans = Plan.all
     @plan = Plan.new
   end
 
@@ -9,31 +13,20 @@ class PlansController < ApplicationController
     if @plan.save
       redirect_to root_path
     else
-      @plans = Plan.all
       render :index
     end
   end
 
   def show
-    @plan = Plan.find(params[:id])
-    @plans = Plan.all
   end
 
   def edit
-    @plan = Plan.find(params[:id])
-    @plans = Plan.all
-    # 選択されていないselectを表示させる回数を決める
-    @users_count = 6 - @plan.users.count
   end
 
   def update
-    @plan = Plan.find(params[:id])
     if @plan.update(edit_plan_params)
       redirect_to root_path
     else
-      @plans = Plan.all
-      # 選択されていないselectを表示させる回数を決める
-      @users_count = 6 - @plan.users.count
       render 'edit'
     end
   end
@@ -46,5 +39,26 @@ class PlansController < ApplicationController
 
   def edit_plan_params
     params.require(:plan).permit(:title, :start_time, :ending_time, :date_pattern, :comment, user_ids: []).merge(master_id: current_user.id)
+  end
+
+  def find_plans
+    @plans = Plan.all
+  end
+
+  def find_plan
+    @plan = Plan.find(params[:id])
+  end
+
+  def calc_users_count
+    @plan = Plan.find(params[:id])
+    # 選択されていないselectを表示させる回数を決める
+    @users_count = 6 - @plan.users.count
+  end
+
+  def move_index_check
+    find_plan
+    if !(@plan.master_id == current_user.id)
+      redirect_to root_path
+    end
   end
 end
