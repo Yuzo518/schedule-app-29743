@@ -82,25 +82,30 @@
         </div>
       </div>
 
+      
+
+    </div>
+
+    <div class="show-footer">
       <%# 作成者以外は表示させない%>
       <% if current_user.id == @plan.master_id %>
       <div class="show-btn">
         
         <%= link_to(edit_plan_path(@plan)) do %>
           <div class="btn-edit" >
-            変更
+            変更する
           </div>
         <% end %>
         <%= link_to("#") do %>
           <div class="btn-destroy" >
-            削除
+            削除する
           </div>
         <% end %>
       </div>
       <% end %>
       <%# /作成者以外は表示させない%>
-
     </div>
+
   </div>
   <%#サイドフォーム部分%>
 

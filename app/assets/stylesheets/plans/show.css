@@ -7,10 +7,16 @@
   text-align:center;
 }
 .show-main{
-  height: calc(100% - 60px);
+  height: calc(100vh - 200px);
   background-color: whitesmoke;
   padding-left: 1vw;
   padding-right: 1vw;
+  font-size: 20px;
+}
+.show-footer{
+  height: 60px;
+  background-color: whitesmoke;
+  padding-left: 1vw;
   font-size: 20px;
 }
 

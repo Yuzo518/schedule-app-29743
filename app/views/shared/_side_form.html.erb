@@ -1,10 +1,10 @@
 <div class="side-header">
   予定の入力はこちらから
 </div>
-<div class="side-main">
-  <%= render 'shared/error_messages', model: @plan %>
-  <%= form_with url: plans_path, local: true do |form| %>
 
+<%= form_with url: plans_path, local: true do |form| %>
+<div class="side-main">
+  
     <div class="title">
       <div class="column-name">
         タイトル
@@ -64,12 +64,16 @@
       <div>
         コメント（注意事項など）
       </div>
-      <%= form.text_area :comment, rows:"9", size: "46x9" , maxlength:"500",  class:"input-comment", placeholder:"（例）\n田中もしくは鈴木に直接提出をお願いします。\n遅れる場合は事前にご連絡をお願いいたします。\n※500文字まで" %>
+      <%= form.text_area :comment, rows:"9", size: "46x7" , maxlength:"500",  class:"input-comment", placeholder:"（例）\n田中もしくは鈴木に直接提出をお願いします。\n遅れる場合は事前にご連絡をお願いいたします。\n※500文字まで" %>
     </div>
 
-    <div class="submit">
+  <%= render 'shared/error_messages', model: @plan %>
+    
+</div>
+
+<div class="side-footer">
+  <div class="submit">
       <%= form.submit "登録", class:"form-btn"%>
     </div>
-    
-  <% end %>
 </div>
+<% end %>
