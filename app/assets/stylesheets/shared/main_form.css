@@ -6,6 +6,10 @@
 .calendar{
   height: calc(100% - 120px);
 }
+.calendar a{
+  text-decoration: none;
+  color: #28a745;
+}
 .main-footer{
   height: 60px;
   background-color: gray;
