@@ -2,7 +2,7 @@ class PlansController < ApplicationController
   before_action :find_plans
   before_action :calc_users_count, only: [:edit, :update]
   before_action :find_plan, only: [:show]
-  before_action :move_index_check, only:[:edit, :update]
+  before_action :move_index_check, only: [:edit, :update]
 
   def index
     @plan = Plan.new
@@ -57,8 +57,6 @@ class PlansController < ApplicationController
 
   def move_index_check
     find_plan
-    if !(@plan.master_id == current_user.id)
-      redirect_to root_path
-    end
+    redirect_to root_path unless @plan.master_id == current_user.id
   end
 end
