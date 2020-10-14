@@ -7,7 +7,18 @@
   padding-top: 15px;
   color: aliceblue;
 }
-
+.select-user{
+  display: flex;
+}
+.search-users{
+  margin-right: 3px;
+}
+.search-btn{
+  font-size: 20px;
+  width: 180px;
+  color: aliceblue;
+  background-color: #28a745;
+}
 .calendar{
   height: calc(100% - 120px);
 }

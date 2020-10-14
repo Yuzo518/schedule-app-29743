@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  before_action :find_plans
+  before_action :find_plans, only: [:show, :edit, :index]
   before_action :calc_users_count, only: [:edit, :update]
   before_action :find_plan, only: [:show, :destroy]
   before_action :move_index_check, only: [:edit, :update, :destroy]
@@ -39,6 +39,15 @@ class PlansController < ApplicationController
     end
   end
 
+  def search
+  end
+
+  def reference
+    @plans = Plan.reference(params[:user_ids])
+    @plan = Plan.new
+    render :index
+  end
+
   private
 
   def plan_params
@@ -50,7 +59,16 @@ class PlansController < ApplicationController
   end
 
   def find_plans
-    @plans = Plan.all
+    plan_users = PlanUser.where(user_id: current_user.id)
+    plan_num = []
+    plan_users.each do |user|
+      plan_num << user.plan_id
+    end
+    plan_num = plan_num.uniq
+    @plans = []
+    plan_num.each do |plan_id|
+      @plans << Plan.find(plan_id)
+    end
   end
 
   def find_plan
