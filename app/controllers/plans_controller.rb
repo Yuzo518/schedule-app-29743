@@ -13,6 +13,7 @@ class PlansController < ApplicationController
     if @plan.save
       redirect_to root_path
     else
+      find_plans
       render :index
     end
   end
@@ -27,6 +28,7 @@ class PlansController < ApplicationController
     if @plan.update(edit_plan_params)
       redirect_to root_path
     else
+      find_plans
       render 'edit'
     end
   end
@@ -35,6 +37,7 @@ class PlansController < ApplicationController
     if @plan.destroy
       redirect_to root_path
     else
+      find_plans
       render 'show'
     end
   end
