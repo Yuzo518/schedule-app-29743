@@ -1,6 +1,20 @@
 <%# 検索フォーム %>
 <div class="main-header">
-  メインヘッダー
+  <%= form_with url: reference_plans_path, method: :get, local: true do |form| %>
+  <div class="select-user">検索したいユーザーを選択してください：
+    <% 4.times do |t| %>
+      <select name="user_ids[]" class="search-users">
+        <option value="--">選択してください</option>
+        <% User.all.each do |user| %>
+          <option value=<%= user.id %>><%= user.name %></option>
+        <% end %>
+      </select>
+    <% end %>
+    <div>
+      <%= form.submit "検索", class:"search-btn"%>
+    </div>
+  </div>
+  <% end %>
 </div>
 
 <%# カレンダー表示部分 ※予定がなければカレンダーのみ表示する %>
