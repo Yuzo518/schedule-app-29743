@@ -34,7 +34,7 @@
                                    end_year: (Time.now.year)+1,
                                    start_hour: 8,
                                    end_hour: 20,
-                                   default: Date.new(Time.now.year, Time.now.month, Time.now.day),
+                                   default: DateTime.new(Time.now.year, Time.now.month, Time.now.day, Time.now.hour+1),
                                    minute_step: 15)%>
         </div>
       </div>
@@ -49,7 +49,7 @@
                                    end_year: (Time.now.year)+1,
                                    start_hour: 8,
                                    end_hour: 20,
-                                   default: Date.new(Time.now.year, Time.now.month, Time.now.day),
+                                   default: DateTime.new(Time.now.year, Time.now.month, Time.now.day, Time.now.hour+2),
                                    minute_step: 15)%>
         </div>
       </div>
