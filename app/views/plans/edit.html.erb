@@ -41,7 +41,13 @@
             開始時間
           </div>
           <div class="column-input">
-            <%= form.datetime_select :start_time, class:"input-time" %>
+            <%= form.datetime_select(:start_time,
+                                     class:"input-time",
+                                     start_year: (Time.now.year),
+                                     end_year: (Time.now.year)+1,
+                                     start_hour: 8,
+                                     end_hour: 20,
+                                     minute_step: 15)%>
           </div>
         </div>
         <div class="ending-time">
@@ -49,7 +55,13 @@
             終了時間
           </div>
           <div class="column-input">
-            <%= form.datetime_select :ending_time, class:"input-time" %>
+            <%= form.datetime_select(:ending_time,
+                                   class:"input-time",
+                                   start_year: (Time.now.year),
+                                   end_year: (Time.now.year)+1,
+                                   start_hour: 8,
+                                   end_hour: 20,
+                                   minute_step: 15)%>
           </div>
         </div>
       </div>
