@@ -19,6 +19,10 @@
   color: aliceblue;
   background-color: #28a745;
 }
+.search-btn:hover{
+  background-color: aliceblue;
+  color: #28a745;
+}
 .calendar{
   height: calc(100% - 120px);
 }

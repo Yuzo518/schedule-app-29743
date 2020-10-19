@@ -1,30 +1,38 @@
 .top-page-header{
   height: 80px;
   width: 100vw;
-  color: aliceblue;
   background-color: #28a745;
   display: flex;
-  justify-content: space-between;
-}
-.right-list{
-  font-size: 60px;
-  margin-left: 3vw;
-}
-.right-list a{
-  text-decoration: none;
-  color: aliceblue;
+  opacity: 0.8;
 }
 .left-list{
+  font-size: 60px;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.left-list a{
+  text-decoration: none;
+  color: black;
+}
+/*アニメーション設定*/
+.left-list a:hover{
+  color: aliceblue;
+ }
+
+.right-list{
   margin-right: 10vw;
   padding-top: 50px;
 }
-.left-list ul{
+.right-list ul{
   display: flex;
   align-items: flex-end;
 }
-.left-list a{
+.right-list a{
   font-size: 20px;
   margin-right: 10px;
   text-decoration: none;
+  color: black;
+}
+.right-list a:hover{
   color: aliceblue;
 }
