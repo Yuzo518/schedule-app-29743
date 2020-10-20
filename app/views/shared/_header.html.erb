@@ -1,8 +1,8 @@
 <header class='top-page-header'>
-   <div class="right-list">
+   <div class="left-list">
     <h1><%= link_to 'Schedule-App', plans_path %></h1>
   </div>
-  <div class="left-list">
+  <div class="right-list">
     <ul>
       <li><%= link_to current_user.name, "#" %></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
