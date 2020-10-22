@@ -1,6 +1,6 @@
 <h2 align="center">Schedule-APP</h2>
 
-![アプリトップページ]()
+![アプリトップページ](schedule-app(toppage).png)
 
 ## アプリケーション概要
 
