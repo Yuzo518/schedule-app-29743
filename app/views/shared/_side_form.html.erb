@@ -6,9 +6,9 @@
 <div class="side-main">
   
     <div class="title">
-      <div class="column-name">
+      <%#div class="column-name">
         タイトル
-      </div>
+      </div%>
       <div class="column-input">
         <%= form.text_field :title, class:"input-title", maxlength:"20", size: 31, placeholder:"件名 ※20文字まで" %>
       </div>
@@ -78,7 +78,7 @@
       <div>
         コメント（注意事項など）
       </div>
-      <%= form.text_area :comment, rows:"9", size: "46x7" , maxlength:"500",  class:"input-comment", placeholder:"（例）\n田中もしくは鈴木に直接提出をお願いします。\n遅れる場合は事前にご連絡をお願いいたします。\n※500文字まで" %>
+      <%= form.text_area :comment, rows:"8", size: "40x4" , maxlength:"500",  class:"input-comment", placeholder:"（例）\n田中もしくは鈴木に直接提出をお願いします。\n遅れる場合は事前にご連絡をお願いいたします。\n※500文字まで" %>
     </div>
 
   <%= render 'shared/error_messages', model: @plan %>

@@ -1,7 +1,7 @@
 <%# 検索フォーム %>
 <div class="main-header">
   <%= form_with url: reference_plans_path, method: :get, local: true do |form| %>
-  <div class="select-user">検索したいユーザーを選択してください：
+  <div class="select-user">検索するユーザーを選択してください：
     <% 4.times do |t| %>
       <select name="user_ids[]" class="search-users">
         <option value="--">選択してください</option>
@@ -48,6 +48,6 @@
 <% end %>
 
 <%# フッター部分 %>
-<div class="main-footer">
+<%# div class="main-footer">
   メインフッター
-</div>
+</div %>
